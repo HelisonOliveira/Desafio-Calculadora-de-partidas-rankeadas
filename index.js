@@ -1,15 +1,18 @@
 
 let numberOfVictories = Math.floor(Math.random() * 150)
-console.log("numeros de vitorias " + numberOfVictories);
+//console.log("numeros de vitorias " + numberOfVictories);
 
 let numberOfDefeats = generateNumberOfDefeats(numberOfVictories)
-console.log("numeros de derrotas " + numberOfDefeats);
+//console.log("numeros de derrotas " + numberOfDefeats);
 
 let levelCreated = generateLevel(numberOfVictories)
-console.log(levelCreated);
+//console.log(levelCreated);
 
 let level = levelClassification(levelCreated)
-console.log(level);
+//console.log(level);
+
+let WinningBalance = CalculateWinningBalance(numberOfVictories, numberOfDefeats)
+//console.log(WinningBalance);
 
 function generateNumberOfDefeats(numberOfVictories) {
     let numberOfDefeats = 0
@@ -81,3 +84,9 @@ function levelClassification(levelCreated) {
             break;
     }
 }
+
+function CalculateWinningBalance(numberOfVictories, numberOfDefeats) {
+    let WinningBalance = numberOfVictories - numberOfDefeats
+    return WinningBalance
+}
+console.log("O Herói tem " + numberOfVictories + " vitórias e " + numberOfDefeats + " derrotas, " + "saldo de " + WinningBalance + " vitórias: nível " + level)
