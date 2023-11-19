@@ -5,7 +5,10 @@ console.log("numeros de vitorias " + numberOfVictories);
 let numberOfDefeats = generateNumberOfDefeats(numberOfVictories)
 console.log("numeros de derrotas " + numberOfDefeats);
 
-let level = generateLevel(numberOfVictories)
+let levelCreated = generateLevel(numberOfVictories)
+console.log(levelCreated);
+
+let level = levelClassification(levelCreated)
 console.log(level);
 
 function generateNumberOfDefeats(numberOfVictories) {
@@ -57,5 +60,24 @@ function generateLevel(numberOfVictories) {
     } else if (numberOfVictories >= 101) {
         let level = 150
         return level
+    }
+}
+
+function levelClassification(levelCreated) {
+    switch (levelCreated) {
+        case 10: return "Ferro"
+            break;
+        case 20: return "Bronze"
+            break;
+        case 50: return "Prata"
+            break;
+        case 80: return "Ouro"
+            break;
+        case 90: return "Diamante"
+            break;
+        case 100: return "Lendario"
+            break;
+        case 150: return "Imortal"
+            break;
     }
 }
